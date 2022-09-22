@@ -5,9 +5,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 driver = webdriver.Chrome(executable_path='C:/chromedriver.exe')
+driver.maximize_window()
 
 #Scenario 4: Displaying product page
-driver.maximize_window()
 driver.get("http://practice.automationtesting.in/")
 my_account = driver.find_element_by_css_selector('.menu-item-type-post_type:nth-child(2)')
 my_account.click()
@@ -94,7 +94,7 @@ cover.click()
 close_btn = WebDriverWait(driver, 10).until(
     EC.element_to_be_clickable((By.CLASS_NAME, 'pp_close')))
 close_btn.click()
-driver.close()
+# driver.close()
 
 #Scenario 8: Checking price in the cart
 driver.get("http://practice.automationtesting.in/")
@@ -114,7 +114,7 @@ total = WebDriverWait(driver, 5).until(
     EC.visibility_of_element_located((By.CLASS_NAME, 'order-total')))
 assert subtotal.text == 'Subtotal ₹180.00'
 assert total.text == 'Total ₹183.60'
-driver.close()
+# driver.close()
 
 #Scenario 9: Shop: working with the cart
 driver.get("http://practice.automationtesting.in/")
@@ -149,7 +149,7 @@ coupon_btn.click()
 time.sleep(3) #probably explicit wait shoud be added
 coupon_msg = driver.find_element_by_css_selector('.woocommerce-error')
 print(coupon_msg.text)
-driver.close()
+# driver.close()
 
 #Scenario 10: Shop: buying a product
 driver.get("http://practice.automationtesting.in/")

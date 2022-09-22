@@ -13,13 +13,13 @@ my_account = driver.find_element_by_css_selector('.menu-item-type-post_type:nth-
 my_account.click()
 email_value = driver.find_element_by_id('reg_email')
 email_value.click()
-email_value.send_keys('testmail7@blahblah.com')
+email_value.send_keys('testmail11@blahblah.com')
 pass_value = driver.find_element_by_id('reg_password')
 pass_value.click()
 pass_value.send_keys('!p@s$w0Rd!m')
 pass_value.click()
-register_btn = driver.find_element_by_css_selector('div.u-column2 [type="password"]')
-password_str = WebDriverWait(driver, 20).until(
+register_btn = driver.find_element_by_css_selector('[name="register"]')
+password_str = WebDriverWait(driver, 25).until(
     EC.text_to_be_present_in_element((By.CSS_SELECTOR, ".woocommerce-password-strength"), 'Medium'))
 register_btn.click()
 time.sleep(5)
