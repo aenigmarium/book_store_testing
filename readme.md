@@ -1,1 +1,1 @@
-Testing repository for be-tester
+Testing repository for learning purposes 
